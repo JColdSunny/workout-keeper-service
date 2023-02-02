@@ -1,0 +1,5 @@
+MONGODB_USERNAME: "admin"
+MONGODB_PASSWORD: "admin"
+MONGODB_HOST: "localhost"
+MONGODB_PORT: "27017"
+MONGODB_DB: "workout_keeper_service"

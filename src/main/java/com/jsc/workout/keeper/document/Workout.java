@@ -6,7 +6,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Getter
@@ -20,9 +21,11 @@ public class Workout {
 
     private String name;
 
-    private LocalDateTime start;
+    private LocalDate date;
 
-    private LocalDateTime end;
+    private LocalTime start;
+
+    private LocalTime end;
 
     private List<Exercise> exercises;
 

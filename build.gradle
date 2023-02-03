@@ -12,12 +12,19 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    mapstruct_version = '1.5.3.Final'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    implementation "org.mapstruct:mapstruct:${mapstruct_version}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -26,6 +33,10 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+compileJava {
+    options.compilerArgs += ['-Amapstruct.defaultComponentModel=spring']
 }
 
 tasks.named('test') {

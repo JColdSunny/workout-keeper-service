@@ -1,4 +1,11 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
 spring:
+  application:
+    name: workout-keeper-service
   data:
     mongodb:
       uri: mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}:${MONGODB_PORT}
